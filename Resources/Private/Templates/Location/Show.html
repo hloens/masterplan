@@ -4,9 +4,9 @@
 			data-namespace-typo3-fluid="true">
 
 <f:if condition="{project.txMaps2Uid}">
-	<maps2:widget.poiCollection poiCollection="{project.txMaps2Uid}"
-															override="{settings: {mapWidth: '100%', mapHeight: '300', 'zoom': '14'}}" />
-
+	<f:render partial="Maps2/PoiCollection"
+			  section="showMap"
+			  arguments="{poiCollections: {0: project.txMaps2Uid}, override: {settings: {mapWidth: '100%', mapHeight: '300', zoom: '14'}}}" />
 	<f:link.action action="show"
 								 controller="Project"
 								 arguments="{project: project}"
