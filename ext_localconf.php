@@ -5,11 +5,11 @@ if (!defined('TYPO3_MODE')) {
 
 call_user_func(static function () {
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-        'JWeiland.masterplan',
+        'Masterplan',
         'Masterplan',
         [
-            'Project' => 'list, show',
-            'Location' => 'show'
+            \JWeiland\Masterplan\Controller\ProjectController::class => 'list, show',
+            \JWeiland\Masterplan\Controller\LocationController::class => 'show'
         ],
         // non-cacheable actions
         [
